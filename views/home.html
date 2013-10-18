@@ -1,0 +1,17 @@
+<div class="row">
+	<ol class="breadcrumb">				  
+	  <li><a href="#">Library</a></li>
+	</ol>
+</div>
+<div class="row">
+	<h1>Browse Library</h1>	
+	<hr>
+</div>
+<div class="row" ng-show="games">
+	<pre>Page: {{ currentPage }} of {{ numPages }}</pre>
+	<pagination total-items="totalItems" max-size="10" items-per-page="itemsPerPage" on-select-page="pageChanged(page)" page="currentPage" class="pagination-small" boundary-links="true"></pagination>	
+	<ul class="list-group">
+		<li class="list-group-item" ng-repeat="game in games"><a href="#/game/{{ game.id }}">{{ game.name }}</a></li>	
+	</ul>	
+	<pagination total-items="totalItems" max-size="10" items-per-page="itemsPerPage" on-select-page="pageChanged(page)" page="currentPage" class="pagination-small" boundary-links="true"></pagination>
+</div>
